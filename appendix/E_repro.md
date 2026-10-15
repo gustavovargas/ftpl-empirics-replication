@@ -12,4 +12,4 @@ and any printing errata documented in the file header.
 One script per test regenerates the figures and the tables in this appendix directly from those
 sources; the census is a single machine-readable file whose row-level notes record the
 verification trail. The full repository — data, digitised files, estimation code and this
-appendix's generator — is available from the author, and a public version is in preparation.
+appendix's generator — is public at https://github.com/gustavovargas/ftpl-empirics-replication.
