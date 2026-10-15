@@ -1,20 +1,23 @@
 ## Appendix B. Break-test specifications, windows and data
 
 **Break detection.** For each episode the price series (and the money series where one exists) is
-converted to monthly log-differences over the episode window. The primary estimator is Bai–Perron
-single-break estimation by exact dynamic programming (`ruptures.Dynp`, kernel (rbf) cost,
-minimum segment three months), so that shifts in both the level and the volatility of monthly
-inflation count toward the break. The robustness estimator is a Zivot–Andrews-type endogenous
+converted to monthly log-differences over the episode window. The primary estimator (labelled BP
+in the tables) is a single-break kernel change-point detector solved by exact dynamic programming
+(`ruptures.Dynp`, RBF kernel cost, minimum segment three months) — the single-break analogue of
+the Bai–Perron (1998) framework with a kernel cost in place of segmented least squares — so that
+shifts in both the level and the volatility of monthly inflation count toward the break. The robustness estimator is a Zivot–Andrews-type endogenous
 break date: the candidate month that minimises the t-statistic of the autoregressive coefficient
 in a unit-root regression with a level break and one augmentation lag, with 15 per cent trimming.
-Multiple-break detection (PELT, penalised) is run alongside to confirm that the single dominant
-break is not an artefact of forcing one break on a multi-regime series. Distances are measured in
-months from the detected break to the announcement date coded in appendix A.
+Multiple-break detection (PELT, penalised) is run alongside for context, since the single-break
+design imposes one break whether or not the data demand one. Distances are measured in calendar
+months (differences of monthly periods) from the detected break to the announcement date coded in
+appendix A.
 
 **Durability.** For every disinflation, three statistics of monthly inflation around the reform
 month (t = 0): the inherited rate (median over t −6 to −1), the freeze effect (minimum over t 0
-to +6), and the settlement (median over t +7 to +12). Where plans followed one another quickly,
-the settlement window is cut off at the month before the next plan. The settlement-to-inherited
+to +6), and the settlement (median over the six months ending at a cap, where the cap is +12 or,
+where plans followed one another quickly, the month before the next plan — the window slides back
+rather than shrinks, to keep six observations: Collor, for instance, uses t +4 to +9). The settlement-to-inherited
 ratio is the durability measure plotted in Figure 3 of the paper.
 
 **Event study (Test 2).** Real balances are money divided by prices, each episode indexed to 100
@@ -73,4 +76,5 @@ cent, July +4.0).
 **Velocity (section 7 of the paper).** M2 velocity is FRED M2V, quarterly, 1959–2025; Divisia M4
 velocity is nominal GDP over the Center for Financial Stability Divisia M4. ADF and
 Zivot–Andrews unit-root tests as implemented in `arch`; the AR(1) half-life is ln(0.5)/ln(ρ) from
-an OLS autoregression; regime means from Bai–Perron (l2 cost) on the level with four breaks.
+an OLS autoregression; segment means from least-squares segmentation (l2 cost) of the level with
+four imposed breaks.

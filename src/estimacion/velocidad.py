@@ -62,8 +62,9 @@ def velocidad_divisia():
 def main(outdir):
     os.makedirs(outdir, exist_ok=True)
     estilo()
-    m2v = fetch_fred("M2V")["M2V"].dropna()
-    dm4v = velocidad_divisia()
+    # Muestra recortada a fin de 2025: el rótulo dice 1959-2025 y la caché puede traer 2026
+    m2v = fetch_fred("M2V")["M2V"].dropna().loc[:"2025-12-31"]
+    dm4v = velocidad_divisia().loc[:"2025-12-31"]
 
     t_m2 = bateria(m2v, 4)
     t_dm4 = bateria(dm4v, 4)
@@ -82,15 +83,15 @@ def main(outdir):
         ax.hlines(m, a, b, color="#c0392b", linewidth=2.6, zorder=5)
         ax.annotate(f"{m:.2f}", xy=(a + (b - a) / 2, m), xytext=(0, 6), textcoords="offset points",
                     ha="center", fontsize=9, color="#c0392b", fontweight="bold")
-    ax.plot([], [], color="#c0392b", linewidth=2.6, label="Regime mean (Bai–Perron breaks)")
+    ax.plot([], [], color="#c0392b", linewidth=2.6, label="Segment means (four imposed breaks, least-squares)")
 
-    ax.set_title("The velocity of M2 does not revert to a mean: it jumps across regimes")
+    ax.set_title("The velocity of M2 shows no reversion to a fixed mean in 65 years")
     ax.set_ylabel("Velocity of circulation of M2")
     ax.legend(loc="upper left", fontsize=9)
 
     caja = (
         "Tests on M2 velocity (n={n}, 1959-2025):\n"
-        "  ADF (H0 = unit root):         p = {adf:.2f}  →  NOT rejected: NOT stationary\n"
+        "  ADF (H0 = unit root):         p = {adf:.2f}  →  unit root not rejected\n"
         "  Zivot-Andrews (1 break):      p = {za:.2f}  →  not rejected even with a break\n"
         "  AR(1) half-life of reversion: {hl:.0f} YEARS\n"
         "Robustness with Divisia M4: ADF p = {adf2:.2f}, half-life {hl2:.0f} years.\n"

@@ -21,8 +21,10 @@ could not be re-verified against the primary source.
 
 **The 2022 UK episode.** Daily data: GBP/USD (FRED DEXUSUK, daily close), ten-year nominal and
 real zero-coupon gilt yields (Bank of England IADB, IUDMNZC and IUDMRZC). Window 1 September to
-14 October 2022; the mini-budget is 23 September, the Bank's intervention 28 September, the
-U-turn 17 October. The intraday low of the pound (about 1.03 on 26 September, Asian session)
+31 October 2022; the mini-budget is 23 September, the Bank's temporary gilt purchases ran from
+28 September to 14 October, and the U-turn of 17 October falls inside the window, so the
+retracement is measured, not asserted. Announcement moves are measured from the close of
+22 September, the last session before the mini-budget. The intraday low of the pound (about 1.03 on 26 September, Asian session)
 is below the daily close plotted in Figure 6. Real yields moved more than nominal yields in the
 window — forced sales by leveraged pension funds were concentrated in index-linked gilts
 (Pinter 2023) — so implied inflation compensation in this window mixes the mechanical and the

@@ -57,9 +57,11 @@ def rupturas_multiples(g, pen=3.0, min_size=3):
 
 
 def meses(a, b):
+    """Distancia en meses de calendario (periodos mensuales, no días/30,44: las series
+    mezclan etiquetas de principio y fin de mes y el redondeo por días desplaza ±1)."""
     if a is None or b is None:
         return None
-    return round((pd.Timestamp(a) - pd.Timestamp(b)).days / 30.44)
+    return (pd.Timestamp(a).to_period("M") - pd.Timestamp(b).to_period("M")).n
 
 
 def za_ruptura(g, trim=0.15):
@@ -142,7 +144,7 @@ def figura_durabilidad(filas, outdir):
     for i, f in enumerate(filas):
         color, marca = estetica.get(f["resultado"], ("#d68910", "^"))  # ámbar: gradual/temporal/en curso
         ax.scatter(f["ratio_asentamiento"], i, s=150, color=color, zorder=3, marker=marca)
-        ax.annotate(f"  pre {f['pre']:.0f}% → a year on {f['asentamiento']:.0f}%/mo.",
+        ax.annotate(f"  pre {f['pre']:.0f} → a year on {f['asentamiento']:.0f} log-pts/mo.",
                     xy=(f["ratio_asentamiento"], i), xytext=(8, 0), textcoords="offset points",
                     fontsize=8, color="#555", va="center")
     ax.axvline(1.0, color="#c0392b", linestyle="--", linewidth=1.2, alpha=0.7)
@@ -256,7 +258,11 @@ def figura_resumen(filas, outdir):
                        label=_lab("c", "Exchange-rate break"))
     ax.axvline(0, color="#c0392b", linestyle="--", linewidth=1.6)
     ax.axvspan(-2, 2, color="#c0392b", alpha=0.07)
-    ax.set_xlim(-3.5, 12.5)
+    # El eje cubre TODAS las distancias (sin recortar extremos como Japón +25 o Turquía -14)
+    vals = [f.get(k) for f in filas
+            for k in ("dist_precio_reforma", "dist_za_reforma", "dist_dinero_reforma",
+                      "dist_cambio_reforma") if f.get(k) is not None]
+    ax.set_xlim(min(vals) - 1.5, max(vals) + 1.5)
     ax.set_yticks(list(y))
     ax.set_yticklabels(labels)
     ax.set_ylim(-0.6, len(filas) - 0.4)
@@ -294,7 +300,7 @@ def main(outdir):
     print(f"Bai-Perron |ruptura precios - reforma|: mediana {dp.abs().median():.0f} meses, "
           f"máx {dp.abs().max():.0f}; en {(dp.abs() <= 3).sum()}/{len(dp)} episodios es <= 1 trimestre.")
     print(f"Zivot-Andrews (robustez) |ruptura precios - reforma|: mediana {dza.abs().median():.0f} meses, "
-          f"máx {dza.abs().max():.0f}; resuelve Francia (ago-1926, dist 0) donde Bai-Perron daba +5.")
+          f"máx {dza.abs().max():.0f}; en +-2 meses: {(dza.abs() <= 2).sum()}/{len(dza)}.")
     pares = df.dropna(subset=["dist_precio_dinero"])
     lidera = (pares["dist_precio_dinero"] <= 0).sum()
     print(f"Precios vs dinero (episodios con ambas series, n={len(pares)}): "

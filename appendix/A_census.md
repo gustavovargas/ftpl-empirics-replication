@@ -21,9 +21,12 @@ policy only — executed budgets, statute, published parities — never from the
   package.
 - **Incomes policy (0/1).** Price or wage freezes and controls.
 
-Outcomes are coded as durable success (inflation stopped and stayed below moderate rates for at
-least three years), gradual success, temporary success (stopped, then unravelled), in progress,
-or failure (inflation returned within roughly a year). Dates are the month of the public
+Outcomes are coded as durable success (inflation stopped and stayed below moderate rates until
+the regime itself was superseded, with three years as the minimum horizon), gradual success,
+temporary success (stopped, then later unravelled through the fiscal channel, whatever the
+interval — Convertibility held a decade before its collapse), in progress, or failure (inflation
+returned within roughly a year). Execution-based coding necessarily uses information from after
+the announcement month; what it never uses is the inflation outcome. Dates are the month of the public
 announcement of the package's fiscal core, following the same rule in every case (for Belgium
 and Zimbabwe, where a later legal act exists, both dates are documented in the working file).
 

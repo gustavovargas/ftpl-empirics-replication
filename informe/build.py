@@ -190,10 +190,12 @@ gobierno de Truss anunció ~45.000 millones de libras de recortes fiscales <stro
 mientras el Banco de Inglaterra <em>subía</em> tipos. Si lo que gobierna a la libra fuera la cantidad
 de dinero, una política monetaria restrictiva debería fortalecerla.</p>""")
         html.append(f'<img src="data:image/png;base64,{b3}" alt="truss_event_study.png">')
-        html.append("""<p>Ocurrió lo contrario: la libra cayó a un mínimo histórico y el coste real de
-la deuda británica saltó <strong>+163 puntos básicos</strong> en cuatro sesiones — en la ventana del
+        html.append("""<p>Ocurrió lo contrario: la libra cayó a un mínimo histórico (intradía) y el coste real de
+la deuda británica saltó <strong>+137 puntos básicos</strong> en tres sesiones desde el cierre previo
+al anuncio — en la ventana del
 anuncio fiscal, no de ninguna decisión monetaria. El mercado repreció el respaldo fiscal. El Banco de
-Inglaterra tuvo que intervenir cinco días después con compras de emergencia.</p>""")
+Inglaterra tuvo que intervenir cinco días después con compras de emergencia; y cuando el paquete se
+retiró (17 de octubre), el movimiento se deshizo con el tipo oficial intacto.</p>""")
     # Nivel B — cross-section COVID
     b4 = _img(os.path.join(RAIZ, "src", "estimacion", "out", "covid_cross.png"))
     if b4:

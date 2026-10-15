@@ -12,7 +12,7 @@ The five failed plans:
 {{TABLA_PLACEBOS}}
 
 Durability statistics for every disinflation (monthly inflation as 100 × log-difference: inherited
-median over t −6..−1, freeze minimum over t 0..+6, settlement median over t +7..+12 capped at the
-next plan; ratio = settlement/inherited):
+median over t −6..−1, freeze minimum over t 0..+6, settlement median over the six months ending
+at min(+12, next plan − 1); ratio = settlement/inherited):
 
 {{TABLA_DURABILIDAD}}

@@ -1,5 +1,5 @@
 episodio,tipo,reforma,ruptura_precio,dist_precio_reforma,za_precio,dist_za_reforma,ruptura_dinero,dist_dinero_reforma,dist_precio_dinero,dur_pre,dur_congelacion,dur_asentamiento,dur_cap,dur_ratio_asentamiento
-c17 · Brazil Cruzado 1986,desinflacion,1986-02-28,1985-11-01,-4,1986-12-01,9,1985-12-01,-3.0,-1.0,12.23,0.78,8.16,12,0.67
+c17 · Brazil Cruzado 1986,desinflacion,1986-02-28,1985-11-01,-3,1986-12-01,10,1985-12-01,-2.0,-1.0,12.23,0.78,8.16,12,0.67
 c18 · Brazil Bresser 1987,desinflacion,1987-06-12,1986-12-01,-6,1987-07-01,1,1988-04-01,10.0,-16.0,13.78,4.76,16.76,12,1.22
 c14 · Argentina Primavera 1988,desinflacion,1988-08-03,1987-07-01,-13,1988-02-01,-6,,,,14.36,5.99,27.27,10,1.9
 c19 · Brazil Verão 1989,desinflacion,1989-01-15,1989-08-01,7,1989-02-01,1,1989-09-01,8.0,-1.0,23.53,6.6,36.28,12,1.54

@@ -76,7 +76,7 @@ def _n(v, dec=0):
 
 def tabla_rupturas(nombre_csv):
     t = pd.read_csv(os.path.join(OUT_EST, nombre_csv))
-    filas = ["| Episode | Reform | BP dist. | ZA dist. | Money dist. | Inherited (%/m) | Settlement | Ratio |",
+    filas = ["| Episode | Reform | BP dist. | ZA dist. | Money dist. | Inherited (log pts/m) | Settlement | Ratio |",
              "|----------------------------|----------|------|------|------|--------|--------|------|"]
     for _, r in t.iterrows():
         filas.append(f"| {r.episodio.split('· ')[1]} | {_fecha(r.reforma)} | "
@@ -90,7 +90,7 @@ def tabla_durabilidad():
     t = pd.read_csv(os.path.join(OUT_EST, "rupturas_durabilidad.csv"))
     grupo = {"exito": "Durable", "fracaso": "Failed", "exito_temporal": "Temporary",
              "exito_gradual": "Gradual", "exito_en_curso": "In progress"}
-    filas = ["| Episode | Group | Inherited (%/m) | Freeze min. | Settlement | Ratio |",
+    filas = ["| Episode | Group | Inherited (log pts/m) | Freeze min. | Settlement | Ratio |",
              "|------------------------------|-----------|---------|---------|---------|------|"]
     for _, r in t.sort_values("ratio_asentamiento").iterrows():
         filas.append(f"| {r.episodio.split('· ')[1]} | {grupo[r.resultado]} | {_n(r.pre, 1)} | "
