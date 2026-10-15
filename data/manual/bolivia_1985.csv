@@ -1,0 +1,44 @@
+# Bolivia 1984-1986: tasa de inflacion mensual (%, sobre nivel medio mensual del IPC).
+# Fuente: Jeffrey Sachs, "The Bolivian Hyperinflation and Stabilization", NBER WP 2073
+# (nov-1986), Tabla 1(c) "Monthly Inflation Rates", digitalizada del escaneo (pag. fisica 4).
+# Datos originales: INE Bolivia. Sin serie monetaria mensual en la fuente (los saldos reales
+# mensuales de la pag. -44- solo empiezan en ago-1985): episodio solo-precios.
+# Estabilizacion: DS 21060 anunciado el 29-ago-1985 (Paz Estenssoro; "Nueva Politica Economica":
+# ajuste fiscal con precios de hidrocarburos, congelacion de empleo publico, unificacion
+# cambiaria; SIN control de precios y SIN moneda nueva — el contraejemplo ortodoxo a los planes
+# heterodoxos). Nota de Sachs: los precios dejan de subir el 9-sep-1985; el +56,5% de sep-1985
+# es arrastre estadistico de la inflacion de agosto sobre el promedio mensual.
+fecha,inflacion_mensual_pct
+1984-01-01,9.6
+1984-02-01,23.0
+1984-03-01,21.2
+1984-04-01,63.0
+1984-05-01,47.2
+1984-06-01,4.1
+1984-07-01,5.2
+1984-08-01,15.0
+1984-09-01,37.4
+1984-10-01,59.3
+1984-11-01,31.6
+1984-12-01,61.1
+1985-01-01,68.9
+1985-02-01,182.8
+1985-03-01,24.9
+1985-04-01,11.8
+1985-05-01,35.7
+1985-06-01,78.5
+1985-07-01,66.3
+1985-08-01,16.5
+1985-09-01,56.5
+1985-10-01,-1.9
+1985-11-01,3.2
+1985-12-01,16.8
+1986-01-01,33.0
+1986-02-01,8.0
+1986-03-01,0.1
+1986-04-01,3.6
+1986-05-01,1.0
+1986-06-01,4.3
+1986-07-01,1.8
+1986-08-01,0.7
+1986-09-01,2.3

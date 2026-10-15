@@ -1,0 +1,25 @@
+# Argentina: inflación interanual CORREGIDA (dic-dic), 2003-2015.
+# La inflación oficial del INDEC estuvo falsificada a la baja entre 2007 y 2015 (intervención de ene-2007).
+# Serie empalmada de fuentes creíbles (honesta sobre sus costuras):
+#   2003-2006: INDEC oficial (aún creíble; la intervención empezó en ene-2007).
+#   2007: estimación de Cavallo/PriceStats (Billion Prices Project) — no hay dic-dic provincial limpio; ~20% (aprox).
+#   2008-2010: IPC Santa Fe (provincia no intervenida).
+#   2011-2014: IPC Congreso (promedio de consultoras privadas difundido por diputados opositores).
+#   2015: IPC-BA / CABA (el IPC Congreso se discontinuó a mediados de 2015).
+# Fuentes y URLs: ver data/manual/argentina_inflacion_fuentes.md
+# AVISO: fuentes heterogéneas y con discrepancias entre sí (p. ej. Santa Fe y Congreso difieren en 2013);
+#   la cifra puntual de cada año es incierta, pero la TENDENCIA al alza 2003->2014 es robusta a la fuente.
+anio,infl_corregida,fuente,aprox
+2003,3.7,INDEC,0
+2004,6.1,INDEC,0
+2005,12.3,INDEC,0
+2006,9.8,INDEC,0
+2007,20.0,Cavallo/PriceStats,1
+2008,20.9,IPC Santa Fe,0
+2009,13.4,IPC Santa Fe,0
+2010,22.6,IPC Santa Fe,0
+2011,22.8,IPC Congreso,0
+2012,25.6,IPC Congreso,0
+2013,28.4,IPC Congreso,0
+2014,38.5,IPC Congreso,0
+2015,26.9,IPC-BA (CABA),0

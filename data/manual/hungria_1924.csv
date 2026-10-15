@@ -1,0 +1,68 @@
+# Hungria 1921-1925: indice de precios, billetes en circulacion y tipo de cambio.
+# Fuente: Thomas J. Sargent, "The Ends of Four Big Inflations" (1982), NBER chapter c11452:
+#   - Tabla H3 (pp. 62-63): indice de precios hungaro y centavos de dolar por corona (Nueva York).
+#     OJO al empalme de la propia fuente: hasta nov-1923 es un indice MINORISTA de 60 bienes
+#     (jul-1914 = 100); desde dic-1923 es un indice MAYORISTA de 52 bienes (1913 = 100), calculado
+#     por la oficina estadistica hungara a fin de mes. Sargent lo presenta como una sola columna;
+#     el salto de base puede introducir un escalon artificial en dic-1923.
+#     Fuente original: Young, vol. 2, p. 323.
+#   - Tabla H2 (pp. 58-60): balance del banco central hungaro / State Note Institute,
+#     "Notes in Circulation", fin de mes, en MILLONES de coronas. Desde jun-1924 las cifras son
+#     del Hungarian National Bank (abre el 24-6-1924). Fuente original: Young, vol. 2, p. 321.
+# Estabilizacion: plan de reconstruccion de la SdN; la Comision de Reparaciones libera su
+# gravamen el 21-2-1924, protocolos firmados el 14-3-1924 (presupuesto equilibrado + banco
+# central independiente por ley de 26-4-1924). Sargent: "en marzo de 1924 la subida de precios
+# y la depreciacion se detienen en seco" (p. 61).
+fecha,indice_precios,billetes_millones_coronas,centavos_por_corona
+1921-01-01,,15206,
+1921-02-01,,15571,
+1921-03-01,,15650,
+1921-04-01,,13114,
+1921-05-01,,13686,
+1921-06-01,,18096,
+1921-07-01,4200,15799,0.3323
+1921-08-01,5400,17326,0.2629
+1921-09-01,6250,20845,0.1944
+1921-10-01,6750,23643,0.1432
+1921-11-01,8300,24742,0.1078
+1921-12-01,8250,25175,0.1512
+1922-01-01,8100,25680,0.1525
+1922-02-01,8500,26758,0.1497
+1922-03-01,9900,29327,0.1256
+1922-04-01,10750,30580,0.1258
+1922-05-01,11000,31930,0.1261
+1922-06-01,12900,33600,0.1079
+1922-07-01,17400,38357,0.0760
+1922-08-01,21400,46242,0.0595
+1922-09-01,26600,58458,0.0423
+1922-10-01,32900,70005,0.0402
+1922-11-01,32600,72016,0.0413
+1922-12-01,33400,75887,0.0430
+1923-01-01,38500,73717,0.0392
+1923-02-01,41800,75135,0.0395
+1923-03-01,66000,82205,0.0289
+1923-04-01,83500,100101,0.0217
+1923-05-01,94000,119285,0.0191
+1923-06-01,144500,154996,0.0140
+1923-07-01,286000,226285,0.0097
+1923-08-01,462500,399487,0.0056
+1923-09-01,554000,588810,0.0055
+1923-10-01,587000,744926,0.0054
+1923-11-01,635000,853989,0.0054
+1923-12-01,714000,931337,0.0052
+1924-01-01,1026000,1084677,0.0039
+1924-02-01,1839100,1278437,0.0033
+1924-03-01,2076700,1606875,0.0015
+1924-04-01,2134600,2098091,0.0014
+1924-05-01,2269600,2486257,0.0012
+1924-06-01,2207800,2893719,0.0011
+1924-07-01,2294500,3277943,0.0012
+1924-08-01,2242000,3659757,0.0013
+1924-09-01,2236600,4115925,0.0013
+1924-10-01,2285200,4635090,0.0013
+1924-11-01,2309500,4442644,0.0013
+1924-12-01,2346600,4513990,0.0013
+1925-01-01,2307500,4449650,0.0014
+1925-02-01,2218700,4237985,0.0014
+1925-03-01,2117800,4270096,0.0014
+1925-04-01,,4526216,

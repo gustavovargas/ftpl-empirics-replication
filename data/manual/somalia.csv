@@ -1,0 +1,17 @@
+# Chelin somali por dolar: puntos DOCUMENTADOS (no es una serie continua).
+# Fuentes:
+#  - 1991: el billete de mayor denominacion (1.000 SoSh) valia ~0,30 USD -> ~3.333 SoSh/USD.
+#    Luther (2015), "The Monetary Mechanism of Stateless Somalia", Public Choice 165(1).
+#  - 1992-03-31: 3.800 SoSh/USD. Fitzgerald (2002, p. 18), citado en Luther & White (2016),
+#    "Positively Valued Fiat Money after the Sovereign Disappears", Rev. Behavioral Economics 3(3-4), p. 14 del WP.
+#  - 2008: el billete de 1.000 SoSh valia ~0,03 USD -> ~33.333 SoSh/USD. Luther (2015).
+# Coste de producir+transportar un billete: ~0,02-0,03 USD por billete (Luther & White, nota 13;
+#   Mubarak 2003, pp. 320-21); los beneficios del senoreaje se agotaron hacia 2002.
+# Emisiones no oficiales (Symes 2006a, p. 29, via Luther & White p. 15): Aideed encarga ~165.000 M
+#   SoSh en 1996 (British American Banknote, Ottawa); Puntland importa billetes en 1999 (Pt. Pura
+#   Baru Kudud, Indonesia); comerciantes de Mogadiscio importan 60.000 M en 2001; total estimado
+#   ~481.000 M SoSh no oficiales desde 1991.
+fecha,sosh_por_usd,fuente
+1991-01-15,3333,"Luther (2015): billete de 1.000 SoSh ~ 0,30 USD"
+1992-03-31,3800,"Fitzgerald (2002) via Luther & White (2016)"
+2008-06-15,33333,"Luther (2015): billete de 1.000 SoSh ~ 0,03 USD"

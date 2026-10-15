@@ -1,0 +1,98 @@
+# Polonia 1919-1925: indice de precios mayoristas, billetes en circulacion y tipo de cambio.
+# Fuente: Thomas J. Sargent, "The Ends of Four Big Inflations" (1982), NBER chapter c11452:
+#   - Tabla P3 (p. 70): indice de precios mayoristas, 1914 = 100, ene-1921 a abr-1924. LA SERIE
+#     TERMINA en abr-1924 con la conversion al zloty (3 meses despues de la reforma): no permite
+#     calcular durabilidad a 12 meses. Fuente original: Young, vol. 2, p. 349.
+#   - Tabla P2 (pp. 66-68): "Note Circulation" del Polish State Loan Bank / Bank of Poland, fin de
+#     mes. Hasta abr-1924 en MILLONES de marcos polacos; desde may-1924 en ZLOTYS (unidades), tras
+#     la conversion del banco (1 zloty = 1.800.000 marcos, confirmado por el texto de Sargent
+#     p. 72, que valida el empalme: "de ene-1924 a dic-1924 la circulacion crecio un factor 3,2").
+#     La fila dic-1920 aparece DUPLICADA en el libro con dos valores de circulacion (43.236,2 y
+#     49.361,5); se toma nov=43.236,2 y dic=49.361,5 (la primera fila duplicada repite noviembre).
+#     Ojo: may-1924 (245,0M zl) cae ~23% sobre abr (317,1M zl equiv.): artefacto de transicion
+#     entre bancos (el Bank of Poland abre el 28-abr-1924 y los marcos seguian canjeandose).
+#     Fuente original: Young, vol. 2, p. 348.
+#   - Tabla P4 (p. 71): centavos de dolar por marco polaco (jul-1919 a abr-1924) y por zloty
+#     (jun-1924 en adelante). ERRATA del libro corregida: jun-1924 impreso "10.29"; el zloty
+#     valia 19,29 centavos por contenido oro (texto de Sargent p. 72) y los meses vecinos dan
+#     20,5 (abr, implicito) y 19,25 (jul): se usa 19,29. Fuente original: Young, vol. 2, p. 350.
+# Estabilizacion: poderes plenos a Grabski por ley de 11-ene-1924; presupuesto equilibrado y
+# Bank of Poland independiente con prohibicion de credito no garantizado al gobierno. El censo
+# la codifica exito_temporal: recaida parcial en 1925 (segunda inflacion, corregida en 1926-27).
+fecha,wpi_1914_100,circulacion_millones_marcos,circulacion_zloty,cents_por_marco,cents_por_zloty
+1919-01-01,,1098.1,,,
+1919-02-01,,1160.0,,,
+1919-03-01,,1223.2,,,
+1919-04-01,,1346.0,,,
+1919-05-01,,1548.3,,,
+1919-06-01,,1784.6,,,
+1919-07-01,,2087.9,,6.88,
+1919-08-01,,2466.6,,5.63,
+1919-09-01,,2964.7,,3.88,
+1919-10-01,,3723.6,,3.08,
+1919-11-01,,4236.2,,1.88,
+1919-12-01,,5316.3,,1.29,
+1920-01-01,,6719.9,,0.70,
+1920-02-01,,8300.3,,0.68,
+1920-03-01,,10690.6,,0.67,
+1920-04-01,,16027.9,,0.60,
+1920-05-01,,17934.7,,0.51,
+1920-06-01,,21730.1,,0.59,
+1920-07-01,,26311.4,,0.61,
+1920-08-01,,31085.8,,0.47,
+1920-09-01,,33203.5,,0.45,
+1920-10-01,,38456.8,,0.37,
+1920-11-01,,43236.2,,0.26,
+1920-12-01,,49361.5,,0.16,
+1921-01-01,25139,55079.5,,0.145,
+1921-02-01,31827,62560.4,,0.130,
+1921-03-01,32882,74087.4,,0.132,
+1921-04-01,31710,86755.3,,0.130,
+1921-05-01,32639,94575.8,,0.124,
+1921-06-01,35392,102697.3,,0.082,
+1921-07-01,45654,115242.3,,0.0516,
+1921-08-01,53100,133734.2,,0.0489,
+1921-09-01,60203,152792.1,,0.0256,
+1921-10-01,65539,182777.3,,0.0212,
+1921-11-01,58583,207029.0,,0.0290,
+1921-12-01,57046,229537.6,,0.0313,
+1922-01-01,59231,239615.3,,0.0327,
+1922-02-01,63445,247209.5,,0.0286,
+1922-03-01,73465,250665.5,,0.0236,
+1922-04-01,75106,260553.8,,0.0262,
+1922-05-01,78634,276001.1,,0.0249,
+1922-06-01,87694,300101.1,,0.0237,
+1922-07-01,101587,335426.6,,0.0185,
+1922-08-01,135786,385787.5,,0.0135,
+1922-09-01,152365,463706.0,,0.0127,
+1922-10-01,201326,579972.7,,0.0095,
+1922-11-01,275647,661092.4,,0.0065,
+1922-12-01,346353,793437.5,,0.0057,
+1923-01-01,544690,909160.3,,0.0043,
+1923-02-01,859110,1177300.8,,0.0025,
+1923-03-01,988500,1841205.6,,0.0024,
+1923-04-01,1058920,2332396.8,,0.0023,
+1923-05-01,1125350,2733794.1,,0.0021,
+1923-06-01,1881410,3566649.1,,0.0013,
+1923-07-01,3069970,4478709.0,,0.0007,
+1923-08-01,5294680,6871776.5,,0.0004,
+1923-09-01,7302200,11197737.8,,0.00035,
+1923-10-01,27380680,23080402.2,,0.0001113,
+1923-11-01,67943700,53217494.6,,0.0000502,
+1923-12-01,142300700,125371955.3,,0.0000234,
+1924-01-01,242167700,313659830.0,,0.0000116,
+1924-02-01,248429600,528913418.7,,0.0000109,
+1924-03-01,245277900,596244205.6,,0.0000113,
+1924-04-01,242321800,570697550.5,,0.0000114,
+1924-05-01,,,244977010,,
+1924-06-01,,,334405730,,19.29
+1924-07-01,,,394262550,,19.25
+1924-08-01,,,430263045,,19.23
+1924-09-01,,,460383770,,19.22
+1924-10-01,,,503701630,,19.22
+1924-11-01,,,497600470,,19.21
+1924-12-01,,,550873960,,19.20
+1925-01-01,,,553174980,,19.18
+1925-02-01,,,549637420,,19.18
+1925-03-01,,,563171945,,19.18
+1925-04-01,,,567178830,,19.18

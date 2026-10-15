@@ -1,0 +1,31 @@
+# Zimbabue 2007-2008: tasa de inflacion mensual (%), Tabla 1 de Hanke & Kwok, "On the
+# Measurement of Zimbabwe's Hyperinflation", Cato Journal 29(2), 2009, pp. 353-364 (p. 355).
+# mar-2007 a jul-2008: tasas OFICIALES del Reserve Bank of Zimbabwe; ago-2008 a nov-2008:
+# estimaciones de los autores via PPP con el Old Mutual Implied Rate (el IPC oficial dejo de
+# publicarse en jul-2008). El valor de nov-2008 corresponde al 14-nov (ultima cotizacion: la
+# bolsa dejo de operar hacia el 17/21-nov tras la intervencion del RBZ y la economia se dolarizo espontaneamente en semanas, con los
+# precios estabilizados ya en dic-2008). dic-2008: SIN DATO (la moneda murio: hueco de medicion).
+# El post-periodo (ene-2009 en adelante, IPC en USD) viene del IFS via DBnomics y es coherente
+# con los valores oficiales que cita el propio paper (ene-may 2009: -2,3 -3,1 -3,0 -1,1 -1,0).
+fecha,inflacion_mensual_pct
+2007-03-01,50.54
+2007-04-01,100.70
+2007-05-01,55.40
+2007-06-01,86.20
+2007-07-01,31.60
+2007-08-01,11.80
+2007-09-01,38.70
+2007-10-01,135.62
+2007-11-01,131.42
+2007-12-01,240.06
+2008-01-01,120.83
+2008-02-01,125.86
+2008-03-01,281.29
+2008-04-01,212.54
+2008-05-01,433.40
+2008-06-01,839.30
+2008-07-01,2600.24
+2008-08-01,3190.00
+2008-09-01,12400.00
+2008-10-01,690000000.00
+2008-11-01,79600000000.00

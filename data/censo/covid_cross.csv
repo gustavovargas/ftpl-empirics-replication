@@ -1,0 +1,30 @@
+# Cross-section de la inflación COVID. Una fila por país.
+# infl_acum_20_23: inflación acumulada 2020-2023 (%), media anual compuesta.
+#   Fuentes: Eurostat HICP (europeos), BLS/ONS (EE.UU./RU), Banco Mundial/oficinas nacionales (resto). Verificado jul-2026.
+# fiscal_covid: 'Additional spending and forgone revenue' (medidas above-the-line), % del PIB de 2020.
+#   Fuente: IMF Fiscal Monitor, Database of Country Fiscal Measures Oct-2021, Summary Table. Verificado jul-2026.
+# deuda_pib_2019: deuda bruta AA.PP. / PIB en 2019 (%). Fuente: IMF WEO (GGXWDG_NGDP), contrastado con Eurostat (UE). Verificado.
+# duracion_2019: vida media / ATM de la deuda soberana ~2019 (años). Fuentes: DMOs nacionales + BCE (UE). Verificado; Suiza con caveat (EFV no reabrible).
+#   AVISO: las ATM no son perfectamente homogéneas entre países (letras incl./excl., ajuste por swaps). Nota metodológica en el paper.
+# euro: 1 si comparte el euro (misma M3 -> sin variación monetaria propia); 0 si tiene moneda y M amplia propias.
+# fred_m3: código FRED de broad money (M3) si existe; vacío si no.
+pais,codigo,infl_acum_20_23,fiscal_covid,deuda_pib_2019,duracion_2019,euro,fred_m3
+Estados Unidos,US,19.1,25.5,108.8,5.83,0,MABMM301USM189S
+Reino Unido,GB,21.2,19.3,84.9,15.7,0,MABMM301GBM189S
+Japon,JP,5.6,16.7,206.3,9.2,0,MABMM301JPM189S
+Canada,CA,15.5,15.9,90.1,8.4,0,MABMM301CAM189S
+Australia,AU,16.8,18.4,46.5,7.44,0,MABMM301AUM189S
+Corea del Sur,KR,12.2,6.4,39.7,10.64,0,MABMM301KRM189S
+Noruega,NO,17.0,7.4,39.0,4.74,0,MABMM301NOM189S
+Suecia,SE,20.8,4.2,35.8,4.6,0,
+Suiza,CH,4.9,7.9,38.8,10.7,0,
+Polonia,PL,38.6,6.5,45.2,4.9,0,
+Dinamarca,DK,13.8,3.4,38.3,8.28,0,
+Nueva Zelanda,NZ,19.8,19.3,31.8,8.2,0,
+Alemania,DE,19.4,15.3,58.7,6.91,1,
+Francia,FR,14.9,9.6,98.2,8.17,1,
+Italia,IT,17.2,10.9,133.9,6.87,1,
+Espana,ES,15.0,8.4,97.6,7.55,1,
+Paises Bajos,NL,20.7,10.3,47.7,6.4,1,
+Belgica,BE,16.9,8.2,97.6,9.81,1,
+Portugal,PT,14.7,6.0,116.1,7.5,1,

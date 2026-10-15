@@ -1,0 +1,46 @@
+# Italia 1947-1949: indice de precios mayoristas, todas las mercancias, 1938 = 100 (indice nuevo
+# del Istituto Centrale di Statistica, media geometrica ponderada de 156 mercancias).
+# Fuente: Federal Reserve Bulletin (FRASER), tabla "Wholesale Prices - All Commodities", columna
+# Italy. Entre numeros sucesivos se toma SIEMPRE la ultima revision publicada:
+#   - ene-jun 1947: numero de feb-1948 (p. 262)        - jul-dic 1947: ago-1948 (p. 1040, rev.)
+#   - ene-may 1948: feb-1949 (p. 212)                   - jun-dic 1948: ago-1949 (p. 1018, rev.)
+#   - ene-feb 1949: ago-1949                            - mar-sep 1949: feb-1950 (p. 262)
+#   (coherencia verificada en los solapes: dic-1948 = 5.697 en ago-1949 y feb-1950).
+# Estabilizacion: "stretta di Einaudi" — encaje obligatorio nuevo efectivo el 30-sep-1947 +
+# subida del tipo de descuento (oct-1947), con consolidacion presupuestaria (Pella) en 1947-48 y
+# ayuda Marshall desde abr-1948. El censo la codifica comp_fiscal=1: ancla NO primariamente
+# fiscal — es el caso adversarial del censo para la tesis del paper, y se analiza como tal.
+fecha,wpi_1938_100
+1947-01-01,3754
+1947-02-01,3891
+1947-03-01,4139
+1947-04-01,4533
+1947-05-01,5203
+1947-06-01,5329
+1947-07-01,5779
+1947-08-01,5889
+1947-09-01,6202
+1947-10-01,6010
+1947-11-01,5647
+1947-12-01,5544
+1948-01-01,5373
+1948-02-01,5352
+1948-03-01,5318
+1948-04-01,5240
+1948-05-01,5184
+1948-06-01,5142
+1948-07-01,5139
+1948-08-01,5704
+1948-09-01,5769
+1948-10-01,5724
+1948-11-01,5667
+1948-12-01,5697
+1949-01-01,5698
+1949-02-01,5656
+1949-03-01,5557
+1949-04-01,5393
+1949-05-01,5278
+1949-06-01,5215
+1949-07-01,5034
+1949-08-01,4889
+1949-09-01,4912

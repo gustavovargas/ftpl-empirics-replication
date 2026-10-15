@@ -1,0 +1,12 @@
+episodio,tipo,reforma,ruptura_precio,dist_precio_reforma,za_precio,dist_za_reforma,ruptura_dinero,dist_dinero_reforma,dist_precio_dinero,ruptura_cambio,dist_cambio_reforma,dur_pre,dur_congelacion,dur_asentamiento,dur_cap,dur_ratio_asentamiento
+c04 · Poland 1924,desinflacion,1924-01-11,1922-10-01,-15,1923-06-01,-7,1923-02-01,-11.0,-4.0,1924-02-01,1.0,64.21,-1.28,,12,
+c10 · Italy 1947,desinflacion,1947-09-30,1947-10-01,0,1947-10-01,0,,,,,,7.14,-6.23,-0.44,12,-0.06
+c24 · Chile 1975,desinflacion,1975-04-24,1976-11-01,18,1976-07-01,14,,,,,,14.17,8.08,9.77,12,0.69
+c13 · Argentina Austral 1985,desinflacion,1985-06-14,1985-07-01,1,1985-07-01,1,,,,,,20.0,1.7,3.98,12,0.2
+c32 · Ecuador 2000,desinflacion,2000-01-09,2001-05-01,16,2001-02-01,13,,,,,,3.55,2.34,2.55,12,0.72
+c31 · Zimbabwe 2009,desinflacion,2009-02-13,2009-02-01,0,2009-04-01,2,,,,,,1028.77,-3.16,0.62,12,0.0
+c15 · Argentina Convertibility 1991,desinflacion,1991-04-01,1992-05-01,13,1991-06-01,2,,,,,,7.11,1.33,1.82,12,0.26
+c26 · Yugoslavia 1994,desinflacion,1994-01-24,1994-03-01,1,1994-03-01,1,,,,,,298.98,-6.94,1.39,12,0.0
+c28 · Ukraine 1994,desinflacion,1994-10-11,1995-04-01,6,1994-01-01,-9,,,,,,4.45,5.64,4.88,12,1.1
+c29 · Russia 1995,desinflacion,1995-07-06,1995-07-01,0,1994-02-01,-17,,,,,,8.35,3.15,1.86,12,0.22
+c16 · Argentina 2023,desinflacion,2023-12-12,2024-09-01,9,2024-05-01,5,2025-09-01,21.0,-12.0,,,9.85,4.09,3.04,12,0.31

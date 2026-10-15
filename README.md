@@ -1,0 +1,56 @@
+# Whose Dates Do Prices Obey? — data and replication code
+
+Data, hand-digitised series and estimation code for:
+
+> Vargas Núñez, G. E. (2026), "Whose Dates Do Prices Obey? Fiscal Regime Change and the Anchoring
+> of Inflation". Prepared for the *Economic Affairs* Research Workshop, Vinson Centre, University
+> of Buckingham.
+
+The paper carries Sargent's (1982) test to the full population of high-inflation stabilisations
+since 1921 — a hand-coded census of 34 episodes — and asks one question: when the price level
+turns, does it turn with the fiscal reform or with a break in money?
+
+## Quick start
+
+```bash
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+.venv/bin/python src/estimacion/rupturas.py      # Test 1: endogenous breaks + durability
+.venv/bin/python src/estimacion/event_study.py   # Test 2: remonetisation panel
+.venv/bin/python src/estimacion/velocidad.py     # velocity: unit roots, half-lives, regimes
+.venv/bin/python src/estimacion/covid_cross.py   # Test 3a: COVID cross-section
+.venv/bin/python src/estimacion/truss.py         # Test 3b: 2022 UK mini-budget event study
+.venv/bin/python src/censo_resumen.py            # census contingency figure
+appendix/build.sh                                # regenerates the appendix tables from the CSVs
+```
+
+No API keys are required anywhere. Each script writes its figures (PNG) and mirror tables (CSV)
+to an `out/` directory next to it. Fetched series are cached under `data/raw/` (the cache shipped
+here reproduces the paper's numbers exactly; delete it to re-fetch fresh data).
+
+## Layout
+
+| Path | Contents |
+|---|---|
+| `data/censo/censo_episodios.csv` | The census: 34 episodes, coded by package components, with row-level verification notes and sources (working notes in Spanish) |
+| `data/manual/` | Hand-digitised monthly series — Sargent's (1982) tables for Austria, Hungary, Poland and Germany; Sachs (1986) for Bolivia; *Federal Reserve Bulletin* tables for Belgium and Italy; Bogetić et al. (2022) for Yugoslavia; Hanke–Kwok (2009) for Zimbabwe. Every file documents its source, page numbers, splices and any printing errata in the header |
+| `data/raw/` | Cached fetches: FRED/NBER Macrohistory, IMF IFS (via DBnomics), BCB, BCRP, BCRA, datos.gob.ar, Bank of England, CFS Divisia |
+| `src/estimacion/` | The tests (break detection, event study, velocity, COVID, Truss) with result notes in the READMEs |
+| `src/utils.py` | Shared fetchers (all key-less) and plotting conventions |
+| `appendix/` | The paper's appendix: prose plus `generar.py`, which builds every appendix table directly from the CSVs above |
+| `episodios/`, `informe/` | A companion visual dossier (in Spanish): nine self-contained episode charts and the script that assembles them into a single HTML report |
+
+## Data credits
+
+Original data belong to their sources: FRED and the NBER Macrohistory Database, the IMF
+(International Financial Statistics, via DBnomics), the central banks of Brazil, Peru, Argentina
+and England, Argentina's INDEC and the DEIE of Mendoza, the Center for Financial Stability
+(Divisia M4), Kobe University's CCSS (the Shibamoto–Shizume interwar dataset), and the published
+tables of Sargent (1982), Sachs (1986), Hanke and Kwok (2009) and Bogetić, Dragutinović and
+Petrović (2022). The hand-digitised files and the census coding are the author's; corrections are
+welcome.
+
+## License
+
+Code and original compilations are released under the MIT License (see `LICENSE`). The cached and
+digitised data remain subject to the terms of their original sources and are included here for
+replication only.
