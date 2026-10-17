@@ -53,6 +53,105 @@ PLAN = {"Protocolos Sociedad de Naciones": "League of Nations protocols",
         "Corredor cambiario": "Exchange-rate corridor", "Programa Derviş": "Derviş programme",
         "Dolarización": "Dollarisation", "Reflación de Takahashi": "Takahashi reflation"}
 
+# Contexto histórico por episodio (censo_id) — 2-3 frases: qué pasaba, qué hizo el plan, qué pasó
+HISTORIA = {
+    1: "Austria left the First World War with a collapsing crown and a budget financed by the printing press. "
+       "In October 1922 the Geneva Protocols put reconstruction in the League of Nations' hands: a guaranteed "
+       "foreign loan, a commissioner-general with authority over the budget, and an independent central bank "
+       "barred from lending to the government. Prices stopped almost at once — while the note circulation went on rising for two more years.",
+    5: "The classic hyperinflation: the occupation of the Ruhr in 1923 was met with 'passive resistance' paid for "
+       "by the printing press, and by November prices were doubling in days. The Rentenmark of 15 November 1923 "
+       "came with the real reform: passive resistance ended, the budget was cut, and the Reichsbank's credit to "
+       "the government was capped. Stabilisation arrived within weeks.",
+    3: "Hungary's post-war inflation accelerated through 1923. The League of Nations reconstruction of March 1924 "
+       "repeated the Austrian template — foreign loan, budget control, a new National Bank forbidden to finance "
+       "the Treasury — and inflation stopped that spring.",
+    7: "Belgium's franc slid after a failed stabilisation attempt in 1925-26 left the Treasury unable to roll its "
+       "short debt. The Francqui government of July 1926 pushed through emergency taxes earmarked to debt service "
+       "and consolidated the floating debt; the franc was stabilised de facto by October and returned to gold in 1927.",
+    6: "France's franc fell through the first half of 1926 as cabinets failed to close the deficit. Poincaré's "
+       "return in July 1926, with new taxes and a sinking fund for the debt, turned the franc around within days — "
+       "the price level followed, and the de jure gold parity came in 1928.",
+    34: "A reflation: Japan entered 1931 in deflation under the gold standard. Takahashi Korekiyo, finance minister "
+        "from December 1931, took the yen off gold, ran deficits for recovery and, from 1932, had the Bank of Japan "
+        "underwrite government bonds directly. Prices turned up and the deflation ended.",
+    9: "The other reflation: in April 1933 Roosevelt took the United States off gold and announced deficits with "
+       "the declared purpose of raising the price level. Prices turned upward with the announcements while broad "
+       "money was still depressed from the banking crisis.",
+    12: "Israel's inflation passed 400 per cent a year by 1984-85 under full indexation. The Economic Stabilization "
+        "Plan of July 1985 combined a large budget cut, a shekel anchor, wage-price pacts and, soon after, a law "
+        "forbidding the central bank to finance the government. Inflation fell to around 20 per cent within a year.",
+    11: "Bolivia's hyperinflation peaked in mid-1985 after years of monetised deficits. Decree 21060 of 29 August "
+        "1985 (Paz Estenssoro) closed the deficit — hydrocarbon prices became fiscal revenue, public wages were "
+        "frozen, spending was rationed to cash — and unified the exchange rate, with no price freeze and no new "
+        "currency. Prices stopped within days.",
+    23: "Mexico's inflation reached about 160 per cent a year after the 1987 crash and devaluation. The Solidarity "
+        "Pact of December 1987 paired fiscal adjustment with an exchange-rate anchor and economy-wide price-wage "
+        "agreements; inflation fell through 1988-89 and the stabilisation held.",
+    25: "Poland left communism in late 1989 amid a hyperinflationary burst after food prices were freed. The "
+        "Balcerowicz plan of 1 January 1990 — fiscal discipline, an anchored złoty, hard budget constraints — "
+        "ended the burst at once, though bringing inflation to single digits took most of the decade.",
+    22: "Peru's hyperinflation under García peaked near 400 per cent a month in August 1990. The 'Fujishock' of "
+        "8 August 1990 corrected public prices overnight (petrol rose thirty-fold), ended central-bank financing "
+        "and began a fiscal reconstruction; inflation collapsed within months.",
+    21: "Brazil's fifth stabilisation attempt in a decade was the one with a fiscal leg: after the URV transition "
+        "unit of early 1994, the real of 1 July 1994 arrived on top of an emergency fiscal fund and a hard budget. "
+        "Inflation fell from around 45 per cent a month to single digits annually, durably.",
+    27: "Bulgaria's banking collapse and monetised deficits produced hyperinflation in early 1997. The currency "
+        "board announced that spring and in force on 1 July 1997 pegged the lev to the Deutsche Mark, outlawed "
+        "central-bank credit to the government, and stopped the inflation on the spot.",
+    30: "Turkey's crawling-peg programme collapsed in the February 2001 crisis and the lira floated. The Derviş "
+        "programme announced on 14 April 2001 — a large primary-surplus target, bank restructuring and legal "
+        "central-bank independence, IMF-backed — pushed inflation up first (the float's pass-through) and then "
+        "down for good from early 2002.",
+    4: "Poland's first stabilisation: the Grabski reform of January 1924 created the złoty and the Bank Polski and "
+       "levied a property tax, with no foreign loan. It stopped the hyperinflation — but the budget slipped in "
+       "1925, the złoty fell, and a 'second inflation' forced a new stabilisation in 1926-27.",
+    10: "Italy's post-war inflation was ended by a monetary act: Einaudi's credit squeeze of August-September 1947 "
+        "(reserve requirements and credit restriction) broke prices in October, with the fiscal consolidation and "
+        "Marshall aid arriving in its wake. The census's clearest monetary-led success.",
+    24: "Chile's inflation ran in the hundreds of per cent after 1973. The Cauas adjustment of April 1975 cut the "
+        "deficit sharply, but with indexation woven through contracts the disinflation took years — the census's "
+        "textbook gradual case.",
+    13: "Argentina's Austral plan of 14 June 1985 froze prices and wages, created the austral and promised an end "
+        "to money-financed deficits. It worked for about eighteen months; as the fiscal promise eroded through "
+        "1987-88 inflation returned, and the economy slid into the 1989 hyperinflation.",
+    32: "Ecuador dollarised in January 2000, in the middle of a banking crisis and a collapsing sucre: the purest "
+        "renunciation of the printing press in the census, with only a weak fiscal component. Inflation fell — "
+        "but slowly, taking almost three years to reach single digits.",
+    31: "Zimbabwe's hyperinflation — among the worst ever measured — ended when the Zimbabwe dollar simply ceased "
+        "to trade in late 2008. The February 2009 multicurrency regime and cash budget ('we eat what we kill', in "
+        "finance minister Biti's phrase) formalised the stop and made it durable.",
+    15: "Convertibility, April 1991: Cavallo pegged the peso one-to-one to the dollar by law and turned the "
+        "central bank into a near currency board. Inflation reached zero by 1993 and stayed there for a decade — "
+        "until the fiscal position gave way and the regime collapsed in 2001-02.",
+    26: "Yugoslavia's 1993-94 hyperinflation peaked at an official 313 million per cent a month. The Avramović "
+        "programme of 24 January 1994 introduced a new dinar pegged to the Deutsche Mark with a promise of no "
+        "monetary financing; prices stopped within a week, and the stabilisation eroded from late 1995 as the "
+        "fiscal side gave way.",
+    28: "Ukraine's post-Soviet inflation peaked in 1993. Kuchma's IMF-backed package of October 1994 liberalised "
+        "prices, unified the exchange rate and began a gradual (and incomplete) fiscal adjustment; inflation fell "
+        "from about 400 per cent in 1994 to 10 per cent by 1997, before the 1998 Russian crisis forced a relapse.",
+    29: "Russia's stabilisation of July 1995 anchored the rouble in an exchange-rate corridor and moved deficit "
+        "financing from the printing press to the bond market. Inflation fell steadily until the August 1998 "
+        "default and devaluation — a fiscal collapse with a monetary face — undid it.",
+    16: "The census's live entry: Milei's adjustment of 12 December 2023 devalued the peso and anchored itself to "
+        "an explicit zero-deficit rule, delivering Argentina's first full-year overall surplus since 2010. Monthly "
+        "inflation fell from 25 per cent in the month of the announcement to about 2 per cent by late 2025.",
+    17: "The Cruzado plan of February 1986 froze prices and wages and created the cruzado, with no fiscal "
+        "adjustment behind it. M1 grew 48 per cent in a single month while prices stood still; the freeze "
+        "crumbled and inflation returned within the year.",
+    18: "The Bresser plan of June 1987 repeated the freeze with an announced adjustment that was never delivered. "
+        "Inflation was back above its pre-plan rate within a year.",
+    14: "Argentina's Primavera plan of August 1988 combined price agreements and a managed crawl, again without a "
+        "fiscal leg. It collapsed in February 1989, and the economy went into hyperinflation that summer.",
+    19: "The Verão plan of January 1989 created the cruzado novo and froze prices once more, without fiscal "
+        "content. Within months inflation was heading to 80 per cent a month.",
+    20: "The Collor plan of March 1990 ran the opposite monetary experiment: it sequestered most of the financial "
+        "system's assets — the most brutal liquidity contraction in the census — and still saw inflation back at "
+        "13 per cent a month within a year.",
+}
+
 CSS = """
 body { font-family: Georgia, 'Times New Roman', serif; max-width: 980px; margin: 2em auto;
        padding: 0 1.2em; color: #222; line-height: 1.55; }
@@ -60,6 +159,7 @@ h1 { font-size: 1.7em; margin-bottom: 0.1em; }
 h2 { border-bottom: 2px solid #1e8449; padding-bottom: 0.15em; margin-top: 2.2em; }
 h3 { margin-bottom: 0.2em; margin-top: 1.6em; }
 .sub { color: #666; font-style: italic; margin-top: 0; }
+.historia { font-size: 0.95em; margin: 0.3em 0 0.4em 0; }
 .meta { font-size: 0.86em; color: #555; margin: 0.2em 0 0.5em 0; }
 .meta b { color: #333; }
 img { max-width: 100%; border: 1px solid #e3e0d8; }
@@ -105,8 +205,10 @@ def ficha(cfg, censo):
             + f"<br><b>Peak monthly inflation in window:</b> {100 * gp.max():,.1f}% &nbsp;·&nbsp; "
             f"<b>Median in the six months before the reform:</b> {pre:,.1f}%/m &nbsp;·&nbsp; "
             f"<b>Source:</b> {DATOS[fila.datos_mensuales]}")
+    historia = HISTORIA.get(cfg["censo_id"], "")
     return (f"<h3>{cfg['label'].split('· ')[1]} — {PLAN.get(fila.plan, fila.plan)}</h3>"
-            f"<p class='meta'>{meta}</p>"
+            + (f"<p class='historia'>{historia}</p>" if historia else "")
+            + f"<p class='meta'>{meta}</p>"
             f"<img alt='{cfg['label']}' src='data:image/png;base64,{b64(fig)}'>")
 
 
