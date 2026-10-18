@@ -184,25 +184,83 @@ HISTORIA = {
 }
 
 CSS = """
-body { font-family: Georgia, 'Times New Roman', serif; max-width: 980px; margin: 2em auto;
-       padding: 0 1.2em; color: #222; line-height: 1.55; }
-h1 { font-size: 1.7em; margin-bottom: 0.1em; }
-h2 { border-bottom: 2px solid #1e8449; padding-bottom: 0.15em; margin-top: 2.2em; }
-h3 { margin-bottom: 0.2em; margin-top: 1.6em; }
-.sub { color: #666; font-style: italic; margin-top: 0; }
-.historia { font-size: 0.95em; margin: 0.3em 0 0.4em 0; }
-.meta { font-size: 0.86em; color: #555; margin: 0.2em 0 0.5em 0; }
-.meta b { color: #333; }
-img { max-width: 100%; border: 1px solid #e3e0d8; }
+/* Diseño: boletín estadístico. Paleta tomada de las figuras del paper (verde/azul/rojo
+   sobre papel); Source Serif para el texto, Plex Mono para metadatos y cifras. */
+:root {
+  --bg: #faf9f5; --fg: #22272b; --muted: #5d6771; --line: #ddd7ca;
+  --accent: #1e8449; --accent2: #1b6ca8; --warn: #a4690b; --bad: #c0392b;
+  --card: #ffffff; --plate: #ffffff;
+  --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root {
+  --bg: #15181b; --fg: #e4e1d9; --muted: #98a1aa; --line: #32383e;
+  --accent: #52b981; --accent2: #6fa9d4; --warn: #d2a24c; --bad: #de7f70;
+  --card: #1b2024; --plate: #f4f2ec; color-scheme: dark;
+} }
+* { box-sizing: border-box; }
+body { font-family: var(--serif); background: var(--bg); color: var(--fg);
+       max-width: 960px; margin: 0 auto; padding: 0 20px 2em; line-height: 1.6;
+       font-size: 1.02rem; }
+h1 { font-size: clamp(1.8rem, 4.5vw, 2.5rem); line-height: 1.12; margin: 0.4em 0 0.15em;
+     text-wrap: balance; letter-spacing: -0.01em; }
+h2 { font-size: 1.35rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.2em;
+     margin-top: 2.4em; text-wrap: balance; }
+h3 { margin: 0 0 0.3em; font-size: 1.08rem; display: flex; flex-wrap: wrap;
+     align-items: center; gap: 0.6em; }
+a { color: var(--accent2); }
+.eyebrow { font: 600 0.7rem var(--mono); text-transform: uppercase; letter-spacing: 0.14em;
+           color: var(--accent); margin: 2.2em 0 0; }
+.sub { color: var(--muted); font-style: italic; margin-top: 0.2em; }
+nav.secciones { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap;
+  gap: 0.2em 1.4em; padding: 0.55em 20px; margin: 1.4em -20px 0;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(6px); border-block: 1px solid var(--line);
+  font: 500 0.78rem var(--mono); }
+nav.secciones a { text-decoration: none; color: var(--fg); }
+nav.secciones a:hover { color: var(--accent); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+        padding: 1rem 1.2rem 1.1rem; margin: 1.2em 0; }
+.chip { font: 600 0.66rem var(--mono); text-transform: uppercase; letter-spacing: 0.07em;
+        padding: 2px 9px; border-radius: 999px; white-space: nowrap; }
+.chip.ok  { color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+            background: color-mix(in srgb, var(--accent) 11%, transparent); }
+.chip.mid { color: var(--warn); border: 1px solid color-mix(in srgb, var(--warn) 45%, transparent);
+            background: color-mix(in srgb, var(--warn) 11%, transparent); }
+.chip.bad { color: var(--bad); border: 1px solid color-mix(in srgb, var(--bad) 45%, transparent);
+            background: color-mix(in srgb, var(--bad) 11%, transparent); }
+.chip.neutro { color: var(--muted); border: 1px solid var(--line);
+               background: color-mix(in srgb, var(--muted) 9%, transparent); }
+.historia { font-size: 0.95em; margin: 0.1em 0 0.5em; max-width: 72ch; }
+.meta { font-family: var(--mono); font-size: 0.72rem; color: var(--muted);
+        margin: 0.2em 0 0.7em; line-height: 1.75; font-variant-numeric: tabular-nums; }
+.meta b { color: var(--fg); font-weight: 600; }
+img { max-width: 100%; }
+img.plate { background: var(--plate); border: 1px solid var(--line); border-radius: 5px;
+            padding: 5px; width: 100%; }
 .tabla { overflow-x: auto; }
-table { border-collapse: collapse; font-size: 0.86em; margin: 0.8em 0; }
-th, td { border: 1px solid #ccc; padding: 3px 9px; text-align: right; }
-th { background: #f3f1ea; } td:first-child, th:first-child { text-align: left; }
-.nota { background: #f7f5f0; border-left: 4px solid #1e8449; padding: 0.6em 1em; font-size: 0.92em; }
-.toc { font-size: 0.88em; columns: 3; column-gap: 2em; margin: 0.6em 0 0 0; }
-.toc a { text-decoration: none; }
+table { border-collapse: collapse; font-family: var(--mono); font-size: 0.74rem;
+        margin: 0.8em 0; font-variant-numeric: tabular-nums; }
+th, td { border: 1px solid var(--line); padding: 3px 10px; text-align: right; }
+th { background: color-mix(in srgb, var(--accent) 7%, var(--card)); }
+td:first-child, th:first-child { text-align: left; }
+td { background: var(--card); }
+.nota { background: color-mix(in srgb, var(--accent) 6%, var(--bg));
+        border-left: 4px solid var(--accent); border-radius: 0 6px 6px 0;
+        padding: 0.7em 1.1em; font-size: 0.92em; margin-top: 1.4em; }
+.toc { font: 400 0.78rem var(--mono); columns: 3; column-gap: 2em; margin: 0.5em 0 0;
+       line-height: 1.9; }
+.toc a { text-decoration: none; color: var(--fg); }
+.toc a:hover { color: var(--accent); }
+.toc-grupo { column-span: all; margin: 0.6em 0 0.1em; font: 600 0.72rem var(--mono);
+             text-transform: uppercase; letter-spacing: 0.1em; }
+.toc-grupo a { color: var(--accent); text-decoration: none; }
 @media (max-width: 640px) { .toc { columns: 2; } }
-footer { margin-top: 3em; border-top: 1px solid #ccc; padding-top: 0.8em; font-size: 0.85em; color: #666; }
+code { font-family: var(--mono); font-size: 0.86em;
+       background: color-mix(in srgb, var(--muted) 10%, transparent);
+       padding: 0.08em 0.3em; border-radius: 3px; }
+footer { margin-top: 3em; border-top: 1px solid var(--line); padding-top: 0.9em;
+         font-size: 0.82em; color: var(--muted); }
 """
 
 
@@ -257,8 +315,7 @@ def ficha(cfg, censo):
     pre_log = gp[(om >= -6) & (om <= -1)]
     huecos = int(pp.isna().sum())
     cobertura = f"{gp.index.min().strftime('%b %Y')}–{gp.index.max().strftime('%b %Y')}"
-    meta = (f"<b>Dated policy event:</b> {ref.strftime('%d %b %Y')} (dashed red) &nbsp;·&nbsp; "
-            f"<b>Census outcome:</b> {RESULTADO[cfg['resultado']]}<br>"
+    meta = (f"<b>Dated policy event:</b> {ref.strftime('%d %b %Y')} (dashed red)<br>"
             f"<b>Analysis window:</b> {pd.Timestamp(cfg['rango'][0]).strftime('%b %Y')}–"
             f"{pd.Timestamp(cfg['rango'][1]).strftime('%b %Y')} &nbsp;·&nbsp; "
             f"<b>Price series:</b> {cobertura}, n = {len(gp)} monthly rates"
@@ -271,10 +328,16 @@ def ficha(cfg, censo):
                f"{_conv(pre_log.median()):,.1f}%/m (n = {len(pre_log)}) " if len(pre_log) else "")
             + f"&nbsp;·&nbsp; <b>Source:</b> {DATOS[fila.datos_mensuales]}")
     cov_alt = f"{cfg['label'].split('· ')[1]}: monthly log changes in prices and money, {cobertura}"
-    return (f"<h3 id='ep-{cfg['censo_id']}'>{cfg['label'].split('· ')[1]} — {PLAN.get(fila.plan, fila.plan)}</h3>"
+    clase = {"exito": "ok", "fracaso": "bad"}.get(cfg["resultado"], "mid")
+    chips = f"<span class='chip {clase}'>{RESULTADO[cfg['resultado']]}</span>"
+    if cfg["tipo"] == "reflacion":
+        chips += "<span class='chip neutro'>reflation</span>"
+    return (f"<article class='card' id='ep-{cfg['censo_id']}'>"
+            f"<h3>{cfg['label'].split('· ')[1]} — {PLAN.get(fila.plan, fila.plan)} {chips}</h3>"
             f"<p class='historia'>{HISTORIA.get(cfg['censo_id'], '')}</p>"
             f"<p class='meta'>{meta}</p>"
-            f"<img alt='{cov_alt}' src='data:image/png;base64,{b64(fig)}'>")
+            f"<img class='plate' alt='{cov_alt}' src='data:image/png;base64,{b64(fig)}'>"
+            f"</article>")
 
 
 def bloque_covid():
@@ -307,7 +370,7 @@ scatter's horizontal axis divides the impulse by debt-to-GDP (as a fraction) tim
 years, a scaled indicator rather than a forecast. Maturity definitions are not perfectly
 homogeneous across countries. The scatter shows the data as used; estimates are in the paper, not
 here.</p>
-<img alt='COVID cross-section: scaled fiscal impulse against cumulative inflation 2020-23, 19 countries' src='data:image/png;base64,{b64(fig)}'>
+<img class='plate' alt='COVID cross-section: scaled fiscal impulse against cumulative inflation 2020-23, 19 countries' src='data:image/png;base64,{b64(fig)}'>
 <div class="tabla"><table><tr><th>Country</th><th>Euro</th><th>Infl. 20–23 (%)</th><th>Fiscal (% GDP)</th>
 <th>Debt/GDP 2019 (%)</th><th>Maturity (years)</th></tr>{filas}</table></div>"""
 
@@ -337,7 +400,7 @@ realised inflation). The file holds {len(t)} dated rows across both calendars: G
 n = {n['GBP_USD']}, nominal gilt n = {n['gilt_nominal_10y']}, real gilt n = {n['gilt_real_10y']}.
 Dotted lines: the 'mini-budget' of unfunded tax cuts (23 September), the Bank of England's
 temporary gilt purchases (28 September) and the withdrawal of the package (17 October).</p>
-<img alt='UK 2022: pound and ten-year gilt yields, daily, September-October 2022' src='data:image/png;base64,{b64(fig)}'>"""
+<img class='plate' alt='UK 2022: pound and ten-year gilt yields, daily, September-October 2022' src='data:image/png;base64,{b64(fig)}'>"""
 
 
 def bloque_velocidad():
@@ -359,7 +422,7 @@ Stability's Divisia M4 — a broad aggregate that weights assets by their moneta
 is an <em>index</em> (January 1967 = 100), so the level of this ratio has an arbitrary scale and
 only its movements are informative; {rango(dm4v)}, n = {len(dm4v)}. The paper's section 7 runs the
 stationarity battery on exactly these two series.</p>
-<img alt='US velocity: M2 velocity and GDP over Divisia M4 index, quarterly' src='data:image/png;base64,{b64(fig)}'>"""
+<img class='plate' alt='US velocity: M2 velocity and GDP over Divisia M4 index, quarterly' src='data:image/png;base64,{b64(fig)}'>"""
 
 
 def main():
@@ -389,7 +452,7 @@ def main():
     for ancla, titulo, cargadores, intro in grupos:
         cfgs = sorted([c() for c in cargadores], key=lambda cfg: pd.Timestamp(cfg["reforma"]))
         fichas.append(f"<h2 id='{ancla}'>{titulo}</h2><p>{intro}</p>")
-        toc.append(f"<p style='column-span:all;margin:0.4em 0 0.1em'><b><a href='#{ancla}'>{titulo.split(':')[0]}</a></b></p><div class='toc'>")
+        toc.append(f"<p class='toc-grupo'><a href='#{ancla}'>{titulo.split(':')[0].split(',')[0]}</a></p><div class='toc'>")
         for cfg in cfgs:
             fichas.append(ficha(cfg, censo))
             n_series += 1 + (cfg.get("dinero") is not None)
@@ -400,11 +463,19 @@ def main():
     html = f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The data — Whose Dates Do Prices Obey?</title><style>{CSS}</style></head><body>
+<title>The data — Whose Dates Do Prices Obey?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>{CSS}</style></head><body>
+<p class="eyebrow">Replication materials · 34 stabilisations, 1921–2025</p>
 <h1>The data behind the paper</h1>
 <p class="sub">A descriptive tour of every series used in “Whose Dates Do Prices Obey? Fiscal
 Regime Change and the Anchoring of Inflation” (Gustavo Vargas, 2026; presented at the <i>Economic
 Affairs</i> Research Workshop, Vinson Centre, University of Buckingham)</p>
+<nav class="secciones" aria-label="Sections"><a href="#tabla1">Table 1 sample</a>
+<a href="#intermedios">Intermediate</a> <a href="#fallidos">Failed plans</a>
+<a href="#covid">COVID</a> <a href="#uk2022">UK 2022</a> <a href="#velocidad">Velocity</a></nav>
 <div class="nota"><b>How to read this page.</b> It presents the <b>data</b>, not the results:
 what each series is, where it comes from, what window the paper uses and what the raw monthly
 rates look like. Each episode card gives a short historical note, the dated policy event (the red
